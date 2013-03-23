@@ -3,6 +3,16 @@ Tools
 
 oprofile
 =======
+```bash
+$ opcontrol --init
+$ opcontrol --status
+$ opcontrol --start
+$ opcontrol --list-events
+$ opcontrol --reset
+$ opcontrol --dump
+$ opreport image:path/to/your/exe -l
+$ opannotate image:path/to/your/exe -s
+```
 
 
 Tips
