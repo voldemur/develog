@@ -1,8 +1,6 @@
-Tools
-===============
+# Tools
 
-oprofile
-=======
+## oprofile
 ```bash
 $ opcontrol --init
 $ opcontrol --status
@@ -14,8 +12,7 @@ $ opcontrol --stop
 $ opreport image:path/to/your/exe -l
 $ opannotate image:path/to/your/exe -s
 ```
-NOTES
-===
+### NOTES
 * Compile your program with `-g` option.
 * Do `--stop` or `--shutdown` the oprofiled process after profiling.
 * Oprofile could only do profiling on the active process of your program. Thus it cannot
@@ -23,7 +20,7 @@ NOTES
 
 
 
-Tips
+# Tips
 ===============
 * Do not use too many parameters on your functions.
   Because on IA64 architecture, the arguments are passed through registers.
