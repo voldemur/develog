@@ -12,6 +12,12 @@ $ opcontrol --stop
 $ opreport image:path/to/your/exe -l
 $ opannotate image:path/to/your/exe -s
 ```
+### NOTES
+* Compile your program with `-g` option.
+* Do `--stop` or `--shutdown` the oprofiled process after profiling.
+* Oprofile could only do profiling on the active process of your program. Thus it cannot
+  help you much on the lock contention issues.
+
 
 ## strace
 ```bash
@@ -25,12 +31,13 @@ $ gcore `pidof PROGRAM` # generate a core dump file
 (gdb) set scheduler-locking on
 ```
 
-### NOTES
-* Compile your program with `-g` option.
-* Do `--stop` or `--shutdown` the oprofiled process after profiling.
-* Oprofile could only do profiling on the active process of your program. Thus it cannot
-  help you much on the lock contention issues.
-
+## top
+```bash
+$ top -H -d 1
+$ # in top
+$ # press `1` to ses individual cpu core status
+$ # press `f` then `j` to see which core a specific thread is running on
+```
 
 
 # Tips
