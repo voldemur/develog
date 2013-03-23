@@ -43,6 +43,7 @@ $ gcore `pidof PROGRAM` # generate a core dump file
 * Use bit-operations, instead of multiplication or division, when necessary.
 * Always concern about the cache when operating on arrays.
 * Naming your threads might help with your debuging.
+* Try cpu binding.
 
 # To Be Added
 * Cache coherence & cache consistency
