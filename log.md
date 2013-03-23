@@ -10,6 +10,7 @@ $ opcontrol --start
 $ opcontrol --list-events
 $ opcontrol --reset
 $ opcontrol --dump
+$ opcontrol --stop
 $ opreport image:path/to/your/exe -l
 $ opannotate image:path/to/your/exe -s
 ```
