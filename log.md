@@ -29,6 +29,7 @@ $ opannotate image:path/to/your/exe -s
 * Move the unnecessary repeated-calculations, namely invariants, out from loops.
 * Use bit-operations, instead of multiplication or division, when necessary.
 * Always concern about the cache when operating on arrays.
+* Naming your threads might help with your debuging.
 
 # To Be Added
 * Cache coherence & cache consistency
