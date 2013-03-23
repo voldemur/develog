@@ -26,3 +26,6 @@ $ opannotate image:path/to/your/exe -s
   Because on IA64 architecture, the arguments are passed through registers.
   When there are too many of them, arguments have to be pushed to stack, which is
   usually maintained by memory. That would slow your function calling down.
+* Move the unnecessary repeated-calculations, namely invariants, out from loops.
+* Use bit-operations, instead of multiplication or division, when necessary.
+* Always concern about the cache when operating on arrays.
