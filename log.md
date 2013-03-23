@@ -12,6 +12,19 @@ $ opcontrol --stop
 $ opreport image:path/to/your/exe -l
 $ opannotate image:path/to/your/exe -s
 ```
+
+## strace
+```bash
+$ strace -f -c -p `pidof PROGRAM`
+```
+
+## GDB
+```bash
+$ gcore `pidof PROGRAM` # generate a core dump file
+
+(gdb) set scheduler-locking on
+```
+
 ### NOTES
 * Compile your program with `-g` option.
 * Do `--stop` or `--shutdown` the oprofiled process after profiling.
