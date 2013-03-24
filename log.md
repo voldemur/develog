@@ -12,7 +12,7 @@ $ opcontrol --stop
 $ opreport image:path/to/your/exe -l
 $ opannotate image:path/to/your/exe -s
 ```
-### NOTES
+#### NOTES
 * Compile your program with `-g` option.
 * Do `--stop` or `--shutdown` the oprofiled process after profiling.
 * Oprofile could only do profiling on the active process of your program. Thus it cannot
@@ -27,7 +27,9 @@ $ strace -f -c -p `pidof PROGRAM`
 ## GDB
 ```bash
 $ gcore `pidof PROGRAM` # generate a core dump file
+```
 
+```bash
 (gdb) set scheduler-locking on
 ```
 
@@ -42,7 +44,7 @@ $ # press `f` then `j` to see which core a specific thread is running on
 
 # Tips
 ===============
-* Do not use too many parameters on your functions.
+* Do not use too many parameters with your functions.
   Because on IA64 architecture, the arguments are passed through registers.
   When there are too many of them, arguments have to be pushed to stack, which is
   usually maintained by memory. That would slow your function calling down.
