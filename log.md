@@ -53,8 +53,10 @@ $ # press `f` then `j` to see which core a specific thread is running on
 * Always concern about the cache when operating on arrays.
 * Naming your threads might help with your debuging.
 * Try cpu binding.
+* Be careful of the false-sharing issues on global variables.
 
 # To Be Added
+* SystemTap
 * Cache coherence & cache consistency
 * Memory Barriers
 * Memory Models
