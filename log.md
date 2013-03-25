@@ -54,6 +54,8 @@ $ # press `f` then `j` to see which core a specific thread is running on
 * Naming your threads might help with your debuging.
 * Try cpu binding.
 * Be careful of the false-sharing issues on global variables.
+  * Unintentionally use same cache line in different threads.
+  * Use padding bytes between them
 
 # To Be Added
 * SystemTap
