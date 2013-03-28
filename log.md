@@ -54,11 +54,11 @@ $ # press `f` then `j` to see which core a specific thread is running on
 * Naming your threads might help with your debuging.
 * Try cpu binding.
 * Be careful of the false-sharing issues on global variables.
-  * Unintentionally use same cache line in different threads.
+  * Unintentionally use the same cache line in different threads.
   * Use padding bytes between them
 
 # To Be Added
 * SystemTap
-* Cache coherence & cache consistency
+* Cache Coherence & Cache Consistency
 * Memory Barriers
 * Memory Models
