@@ -30,7 +30,16 @@ $ gcore `pidof PROGRAM` # generate a core dump file
 ```
 
 ```bash
+# lock the thread to prevent it being scheduled, while debuging other than in step mode
 (gdb) set scheduler-locking on
+```
+
+```bash
+# add debuginfo for a separate dso
+(gdb) i sharedlibrary
+From                To                  Syms Read   Shared Object Library
+0x00000038fd800a70  0x00000038fd8166de  Yes (*)     /path/to/lib.so
+(gdb) add-symbol-file /path/to/lib.so.debug 0x00000038fd800a70
 ```
 
 ## top
