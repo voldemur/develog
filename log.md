@@ -66,6 +66,14 @@ $ # press `f` then `j` to see which core a specific thread is running on
 * Be careful of the false-sharing issues on global variables.
   * Unintentionally use the same cache line in different threads.
   * Use padding bytes between them
+* Factors that impact on the scalability of muti-threaded programs.
+  * Context Switching
+  * Cost of Synchronization
+  * Unbalanced Loads
+  * Memory Saturation
+* Granularity
+  * Large granularity of the concurrent task increase the performance.
+  * Large granularity of the critical section harms the performance.
 
 # To Be Added
 * SystemTap
