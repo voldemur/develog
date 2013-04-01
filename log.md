@@ -74,6 +74,8 @@ $ # press `f` then `j` to see which core a specific thread is running on
 * Granularity
   * Large granularity of the concurrent task increase the performance.
   * Large granularity of the critical section harms the performance.
+    * Choose spin lock on tiny critical section.
+    * Using spin lock, pay attention to race of threads running on the same cpu core.
 
 # To Be Added
 * SystemTap
