@@ -74,9 +74,10 @@ $ # press `f` then `j` to see which core a specific thread is running on
 * Granularity
   * Large granularity of the concurrent task increase the performance.
   * Large granularity of the critical section harms the performance.
-    * Choose spin lock on tiny critical section, which will reduce the context switching.
-    * Using spin lock, pay attention to race of threads running on the same cpu core.
-    * By convention, threads tring to acquire a spinlock should yield the cpu, after spinning enough times.
+* Spinlock
+  * Choose spin lock on tiny critical section, which will reduce the context switching.
+  * Using spin lock, pay attention to race of threads running on the same cpu core.
+  * By convention, threads tring to acquire a spinlock should yield the cpu, after spinning enough times.
 
 # To Be Added
 * SystemTap
