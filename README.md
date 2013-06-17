@@ -50,6 +50,12 @@ $ # press `1` to ses individual cpu core status
 $ # press `f` then `j` to see which core a specific thread is running on
 ```
 
+## svn
+```bash
+# revert a bad commit
+$ svn merge -r COMMITTED:PREV .
+```
+
 
 # Tips
 ===============
