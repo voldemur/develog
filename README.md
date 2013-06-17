@@ -58,7 +58,6 @@ $ svn merge -r COMMITTED:PREV .
 
 
 # Tips
-===============
 * Optimize the code that is on the critical executive path of your program, and do not optimize it too early.
 * Do not use too many parameters with your functions.
   In IA64 architecture, the arguments are passed through registers.
@@ -86,8 +85,9 @@ $ svn merge -r COMMITTED:PREV .
   * By convention, threads tring to acquire a spinlock should yield the cpu, after spinning enough times.
 
 # Networks
-=============
 * Each TCP connection is identified by a 4-tuple combination: <client IP, client port, server IP, client port>.
+* Normally, connection is established already after the synchronous `connect` returned, even before the server `accept` it.
+  Thus, at the server side, before a `accept`, a connect may have been established, even though the corresponding `fd` has not been allocated util `accept`.
 
 # To Be Added
 * SystemTap
