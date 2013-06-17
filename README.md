@@ -61,13 +61,13 @@ $ svn merge -r COMMITTED:PREV .
 ===============
 * Optimize the code that is on the critical executive path of your program, and do not optimize it too early.
 * Do not use too many parameters with your functions.
-  )n IA64 architecture, the arguments are passed through registers.
+  In IA64 architecture, the arguments are passed through registers.
   When there are too many of them, arguments have to be pushed to stack, which is
   usually maintained by memory. That would slow your function calling down.
 * Move the unnecessary repeated-calculations, namely invariants, out from loops.
 * Use bit-operations, instead of multiplication or division, when necessary.
 * Always concern about the cache when operating on data sets.
-* Naming your threads might help with your debuging.`prctl(PR_SET_NAME, thread_name, 0, 0, 0)`
+* Naming your threads might help with your debuging. `prctl(PR\_SET\_NAME, thread\_name, 0, 0, 0)`
 * Try cpu binding.
 * Be careful of the false-sharing issues on global variables.
   * Unintentionally use the same cache line in different threads.
@@ -84,6 +84,10 @@ $ svn merge -r COMMITTED:PREV .
   * Choose spin lock on tiny critical section, which will reduce the context switching.
   * Using spin lock, pay attention to race of threads running on the same cpu core.
   * By convention, threads tring to acquire a spinlock should yield the cpu, after spinning enough times.
+
+# Networks
+=============
+* Each TCP connection is identified by a 4-tuple combination: <client IP, client port, server IP, client port>.
 
 # To Be Added
 * SystemTap
