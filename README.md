@@ -86,6 +86,11 @@ $ svn merge -r COMMITTED:PREV .
 
 # Networks
 * Each TCP connection is identified by a 4-tuple combination: <client IP, client port, server IP, client port>.
+* The sliding-window protocol is a flow control for receiver, while the congestion window for intermediate network.
+* The active close end of the connection enters into TIME-WAIT state, for the reasons
+  * The last ACK may be lost.
+  * In case of the establishment of the incarnation of the old connection.
+* The passive close end of the connection enters into CLOSE-WAIT state. A perssist connection of this state often indicates a bug.
 * Normally, connection is established already after the synchronous `connect` returned, even before the server `accept` it.
   Thus, at the server side, before a `accept`, a connect may have been established, even though the corresponding `fd` has not been allocated util `accept`.
 
