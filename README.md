@@ -32,7 +32,17 @@ $ gcore `pidof PROGRAM` # generate a core dump file
 ```bash
 # lock the thread to prevent it being rescheduled, while debuging other than in step mode
 (gdb) set scheduler-locking on
+# view all general registers
+(gdb) i reg
+# view specific register
+(gdb) i reg rip
+# view whole set of registers
+(gdb) i all-reginsters
+# combine `bt` and `i locals`
+(gdb) bt full
 ```
+
+Ctrl+X Ctrl+A opens the window to present the corressponding source code, which sometimes is a bit more convenient.
 
 ```bash
 # add debuginfo for a separate dso
