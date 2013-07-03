@@ -1,4 +1,5 @@
 # Tools
+Sharpen Your Gears.
 
 ## oprofile
 ```bash
@@ -64,6 +65,11 @@ $ # press `f` then `j` to see which core a specific thread is running on
 ```bash
 # revert a bad commit
 $ svn merge -r COMMITTED:PREV .
+# view diff with vim
+$ svn diff | vim -
+# generate and apply patches
+$ svn diff > patch
+$ patch -p0 < patch
 ```
 
 
