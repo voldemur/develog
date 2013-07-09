@@ -72,6 +72,18 @@ $ svn diff > patch
 $ patch -p0 < patch
 ```
 
+## miscs
+```bash
+# issue a command as a daemon
+$ (command &)
+# simple calculator only for integers
+$ echo $((1<<30))
+# floating calculation
+$ echo '3.14 * 1.5^2' | bc -l
+# radix convertion
+$ printf "%x\n" 12345
+```
+
 
 # Tips
 * Optimize the code that is on the critical executive path of your program, and do not optimize it too early.
@@ -110,6 +122,8 @@ $ patch -p0 < patch
 * Normally, connection is established already after the synchronous `connect` returned, even before the server `accept` it.
   Thus, at the server side, before a `accept`, a connect may have been established, even though the corresponding `fd` has not been allocated util `accept`.
 
+# MM
+* Kernel and user process sharing the same address space, avoids the TLB flush everytime when doing syscall. 
 # To Be Added
 * SystemTap
 * Cache Coherence & Cache Consistency
