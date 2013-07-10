@@ -124,6 +124,7 @@ $ printf "%x\n" 12345
 
 # MM
 * Kernel and user process sharing the same address space, avoids the TLB flush everytime when doing syscall. 
+* With CONFIG_SLAB_DEBUG enabled, slab allocator marks either end of a object. If the marker(red zoning) is disturbed, a bug is reported. One object in free stat being filled with the pattern 0x5A(poisoning), if a newly allocated object does not match this pattern, a bug is reported.  
 
 # To Be Added
 * SystemTap
