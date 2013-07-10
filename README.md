@@ -124,6 +124,7 @@ $ printf "%x\n" 12345
 
 # MM
 * Kernel and user process sharing the same address space, avoids the TLB flush everytime when doing syscall. 
+
 # To Be Added
 * SystemTap
 * Cache Coherence & Cache Consistency
