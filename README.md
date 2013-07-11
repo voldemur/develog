@@ -111,7 +111,7 @@ $ printf "%x\n" 12345
   * Choose spin lock on tiny critical section, which will reduce the context switching.
   * Using spin lock, pay attention to race of threads running on the same cpu core.
   * By convention, threads tring to acquire a spinlock should yield the cpu, after spinning enough times.
-  * The accuracy of `usleep` depends on the version of kernel and the load of the system, roughly millisecond other than microsecond.
+* The accuracy of `usleep` depends on the version of kernel and the load of the system, roughly millisecond other than microsecond.
 
 # Networks
 * Each TCP connection is identified by a 4-tuple combination: <client IP, client port, server IP, client port>.
