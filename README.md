@@ -112,6 +112,7 @@ $ printf "%x\n" 12345
   * Using spin lock, pay attention to race of threads running on the same cpu core.
   * By convention, threads tring to acquire a spinlock should yield the cpu, after spinning enough times.
 * The accuracy of `usleep` depends on the version of kernel and the load of the system, roughly millisecond other than microsecond.
+* `likely` or `unlikely` macros are used to direct compilers arrange the instructions properly, to maximize the branch prediction of CPU, to stall the instruction pipelines less.
 
 # Networks
 * Each TCP connection is identified by a 4-tuple combination: <client IP, client port, server IP, client port>.
@@ -126,6 +127,9 @@ $ printf "%x\n" 12345
 # MM
 * Kernel and user process sharing the same address space, avoids the TLB flush everytime when doing syscall. 
 * With CONFIG_SLAB_DEBUG enabled, slab allocator marks either end of a object. If the marker(red zoning) is disturbed, a bug is reported. One object in free stat being filled with the pattern 0x5A(poisoning), if a newly allocated object does not match this pattern, a bug is reported.  
+
+# Conventions
+* Header files tend to be included by source files. Thus, try not to include other unecessary header files in your ones, especially for the interface headers. Or, Not only would this increase the build time, but also would annoy your users. 
 
 # To Be Added
 * SystemTap
