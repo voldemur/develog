@@ -82,6 +82,9 @@ $ echo $((1<<30))
 $ echo '3.14 * 1.5^2' | bc -l
 # radix convertion
 $ printf "%x\n" 12345
+# turn on/off the swap facility
+$ sudo swapoff -a
+$ sudo swapon -a
 ```
 
 
