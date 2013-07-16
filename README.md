@@ -116,6 +116,7 @@ $ sudo swapon -a
   * By convention, threads tring to acquire a spinlock should yield the cpu, after spinning enough times.
 * The accuracy of `usleep` depends on the version of kernel and the load of the system, roughly millisecond other than microsecond.
 * `likely` or `unlikely` macros are used to direct compilers arrange the instructions properly, to maximize the branch prediction of CPU, to stall the instruction pipelines less.
+* To make GCC optimize your code partially, you could use `__attribute__((optimize(0)))` on the specific function.
 
 # Networks
 * Each TCP connection is identified by a 4-tuple combination: <client IP, client port, server IP, client port>.
