@@ -25,13 +25,22 @@ $ opannotate image:path/to/your/exe -s
 $ strace -f -c -p `pidof PROGRAM`
 ```
 
+## GCC
+```bash
+# Print the name of each header file used, in addition to other
+# normal activities. Each name is indented to show how deep in
+# the #include stack it is.
+$ cc -H main.c
+```
+
 ## GDB
 ```bash
 $ gcore `pidof PROGRAM` # generate a core dump file
 ```
 
 ```bash
-# lock the thread to prevent it being rescheduled, while debuging other than in step mode
+# lock the thread to prevent it being rescheduled, while debuging
+# other than in step mode
 (gdb) set scheduler-locking on
 # view all general registers
 (gdb) i reg
