@@ -51,6 +51,8 @@ Ctrl+X Ctrl+A opens the window to present the corressponding source code, which 
 From                To                  Syms Read   Shared Object Library
 0x00000038fd800a70  0x00000038fd8166de  Yes         /path/to/lib.so
 (gdb) add-symbol-file /path/to/lib.so.debug 0x00000038fd800a70
+# add debuginfo for the whole executable
+(gdb) symbol-file /path/to/tair_server.debug
 ```
 
 ## top
