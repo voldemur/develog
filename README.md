@@ -150,6 +150,11 @@ void foo() {
 
 ## instructions
 
+Instructions(X86) that could be used with `lock` are following:
+* xchg, xadd
+* add, sub, xor, adc, sbb
+* and, or, not, neg, inc, dec
+
 # Networks
 * Each TCP connection is identified by a 4-tuple combination: <client IP, client port, server IP, client port>.
 * The sliding-window protocol is a flow control for receiver, while the congestion window for intermediate network.
