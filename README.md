@@ -124,6 +124,10 @@ I love the AT&T syntax.
 
 ## syntax
 
+Memory operands are represented as `section:disp(base, index, scale). When the `disp` and `scale` are constant, `$` shouldn't be prefixed. The `base` and `index` must be registers.
+
+Use `__asm__` instead of `asm` if the latter conflicts with something in the program.
+
 Do use `local labels` in embedded assembly, preventing the multi-definition issue when functions are inlined.
 ```c
 void foo() {
@@ -146,7 +150,34 @@ void foo() {
 }
 ```
 
-### embedded assembly
+### inline assembly
+
+```c
+asm ( <assembler template>
+    : ["constraints"(var)] [,"constraints"(var)]  /* output operands */
+    : ["constraints"(var)] [,"constraints"(var)]  /* input operands */
+    : ["register"] [,"register"] [,"memory"]      /* clobbered registers */
+    );
+```
+
+Common used constraints are following:
+* `r`, register operands, any one of followings
+  * `a`, `%rax`, `%eax`, `%ax`, `%al`
+  * `b`, `%rbx`, `%ebx`, `%bx`, `%bl`
+  * `c`, `%rcx`, `%ecx`, `%cx`, `%cl`
+  * `d`, `%rdx`, `%edx`, `%dx`, `%dl`
+  * `S`, `%rsi`, `%esi`, `%si`
+  * `D`, `%rdi`, `%edi`, `%di`
+* `q`, register operands, any one of `a`, `b`, `c` or `d`
+* `m`, memory operands
+* digit, matching constraints, operands are used both for input and output
+* `f`, floating point register
+
+Contraints modifiers are following:
+* `=`, operand is write-only, thus previous value in it would be decarded 
+
+
+Use `__asm__` instead of `asm` if the latter conflicts with something in the program.
 
 ## instructions
 
