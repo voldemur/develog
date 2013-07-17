@@ -118,6 +118,38 @@ $ sudo swapon -a
 * `likely` or `unlikely` macros are used to direct compilers arrange the instructions properly, to maximize the branch prediction of CPU, to stall the instruction pipelines less.
 * To make GCC optimize your code partially, you could use `__attribute__((optimize(0)))` on the specific function.
 
+# Assembly
+
+I love the AT&T syntax.
+
+## syntax
+
+Do use `local labels` in embedded assembly, preventing the multi-definition issue when functions are inlined.
+```c
+void foo() {
+  /*
+   * cannot be expanded twice in the same context.
+   */
+  asm volatile(
+      "jmp L1;"
+      "L1:":::);
+}
+```
+
+`local labels` are declared as a single digit followed by letter `:`, and referenced by this digit followed by a letter `f` for `forwads` or `b` for `backwards`.
+
+```c
+void foo() {
+  asm volatile(
+      "jmp 1f;"
+      "1:":::);
+}
+```
+
+### embedded assembly
+
+## instructions
+
 # Networks
 * Each TCP connection is identified by a 4-tuple combination: <client IP, client port, server IP, client port>.
 * The sliding-window protocol is a flow control for receiver, while the congestion window for intermediate network.
