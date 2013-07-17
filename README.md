@@ -179,6 +179,20 @@ Contraints modifiers are following:
 
 Use `__asm__` instead of `asm` if the latter conflicts with something in the program.
 
+```c
+/* syscall write */
+inline int as_write(int fd, char *buf, size_t n)
+{
+  int ret;
+  asm (
+      "int $0x80\n\t"
+      : "=a"(ret)
+      : "0" (4), "b"(fd), "c"(buf), "d"(n)
+      );
+  return ret;
+}
+```
+
 ## instructions
 
 Instructions(X86) that could be used with `lock` are following:
