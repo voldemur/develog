@@ -41,11 +41,6 @@ $ gcore `pidof PROGRAM` # generate a core dump file
 (gdb) i all-reginsters
 # combine `bt` and `i locals`
 (gdb) bt full
-```
-
-Ctrl+X Ctrl+A opens the window to present the corressponding source code, which sometimes is a bit more convenient.
-
-```bash
 # add debuginfo for a separate dso
 (gdb) i sharedlibrary
 From                To                  Syms Read   Shared Object Library
@@ -54,6 +49,9 @@ From                To                  Syms Read   Shared Object Library
 # add debuginfo for the whole executable
 (gdb) symbol-file /path/to/tair_server.debug
 ```
+
+Ctrl+X Ctrl+A opens the window to present the corressponding source code, which sometimes is a bit more convenient.
+
 
 ## top
 ```bash
