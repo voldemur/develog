@@ -124,7 +124,7 @@ I love the AT&T syntax.
 
 ## syntax
 
-Memory operands are represented as `section:disp(base, index, scale). When the `disp` and `scale` are constant, `$` shouldn't be prefixed. The `base` and `index` must be registers.
+Memory operands are represented as `section:disp(base, index, scale)`. When the `disp` and `scale` are constant, `$` shouldn't be prefixed. The `base` and `index` must be registers.
 
 Use `__asm__` instead of `asm` if the latter conflicts with something in the program.
 
