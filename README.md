@@ -1,5 +1,5 @@
 # Tools
-Sharpen Your Gears.
+Sharpen Your Gears, Release Your Mind.
 
 ## oprofile
 ```bash
@@ -220,6 +220,9 @@ Instructions(X86) that could be used with `lock` are following:
   Thus, at the server side, before a `accept`, a connect may have been established, even though the corresponding `fd` has not been allocated util `accept`.
 
 # MM
+
+State, in memory, the most valuable thing of this world.
+
 * Kernel and user process sharing the same address space, avoids the TLB flush everytime when doing syscall. 
 * With CONFIG_SLAB_DEBUG enabled, slab allocator marks either end of a object. If the marker(red zoning) is disturbed, a bug is reported. One object in free stat being filled with the pattern 0x5A(poisoning), if a newly allocated object does not match this pattern, a bug is reported.  
 
