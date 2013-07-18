@@ -205,9 +205,19 @@ inline int as_write(int fd, char *buf, size_t n)
 ## instructions
 
 Instructions(X86) that could be used with `lock` are following:
-* xchg, xadd
-* add, sub, xor, adc, sbb
-* and, or, not, neg, inc, dec
+* `lock` prefix is automatically assumed for `xchg`
+* `bts`, `btr`, `btc`
+* `xchg`, `xadd`, `cmpxchg`, `cmpxchg8b`
+* `add`, `sub`, `xor`, `adc`, `sbb`
+* `and`, `or`, `not`, `neg`, `inc`, `dec`
+
+# Atomic Operations
+
+Instructions could be classified into R(Read), W(Write) and RMW(Read-Modify-Write).
+
+Rs and Ws are guaranteed to be atomical by modern X86 architecture, provided that the operand is aligned on their natually boundaries. With unaligned operand, Rs and Ws could also be atomically performed, only if the operand is cached in the same cache-line.
+
+As for RMWs, they are not atomical since they involve multiple memory accesses. For these instructions, `lock` prefix should be add to emit a `LOCK#` signal to the memory bus. While the  `LOCK#` signal is asserted, the corresponding memory location could not be accessed by other processors. Through this, the atomicity of RMWs are guaranteed.
 
 # Networks
 * Each TCP connection is identified by a 4-tuple combination: <client IP, client port, server IP, client port>.
