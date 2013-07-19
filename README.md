@@ -219,6 +219,15 @@ Rs and Ws are guaranteed to be atomical by modern X86 architecture, provided tha
 
 As for RMWs, they are not atomical since they involve multiple memory accesses. For these instructions, `lock` prefix should be add to emit a `LOCK#` signal to the memory bus. While the  `LOCK#` signal is asserted, the corresponding memory location could not be accessed by other processors. Through this, the atomicity of RMWs are guaranteed.
 
+# Memory Ordering
+
+The term `memmory ordering` refers to the order in which the processor issues reads(loads) and writes(stores) through the system bus to system memory.
+
+Different architecture support different memory-ordering models.
+For example, the Intel386 processor enforces programming ordering(string ordering), where reads and writes are issued on the system bus in the order they occur in the instruction stream under all circumstances.
+To allow performance optimization of instruction execution, the IA32 architecture allows departures from strong model, from Pentium 4, Intel Xeon, and P6 family processors.
+These processors allow performance enhancing operatons such as allowing reads to go ahead of buffered writes.
+
 # Networks
 * Each TCP connection is identified by a 4-tuple combination: <client IP, client port, server IP, client port>.
 * The sliding-window protocol is a flow control for receiver, while the congestion window for intermediate network.
