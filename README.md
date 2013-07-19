@@ -169,8 +169,8 @@ asm ( <assembler template>
     );
 ```
 
-Common used constraints are following:
-* `r`, register operands, any one of followings
+Common used constraints are the following:
+* `r`, register operands, any one of the followings
   * `a`, `%rax`, `%eax`, `%ax`, `%al`
   * `b`, `%rbx`, `%ebx`, `%bx`, `%bl`
   * `c`, `%rcx`, `%ecx`, `%cx`, `%cl`
@@ -182,7 +182,7 @@ Common used constraints are following:
 * digit, matching constraints, operands are used both for input and output
 * `f`, floating point register
 
-Contraints modifiers are following:
+Contraints modifiers are the following:
 * `=`, operand is write-only, thus previous value in it would be decarded 
 
 
@@ -190,8 +190,7 @@ Use `__asm__` instead of `asm` if the latter conflicts with something in the pro
 
 ```c
 /* syscall write */
-inline int as_write(int fd, char *buf, size_t n)
-{
+inline int as_write(int fd, char *buf, size_t n) {
   int ret;
   asm (
       "int $0x80\n\t"
@@ -204,7 +203,7 @@ inline int as_write(int fd, char *buf, size_t n)
 
 ## instructions
 
-Instructions(X86) that could be used with `lock` are following:
+Instructions(X86) that could be used with `lock` are the following:
 * `lock` prefix is automatically assumed for `xchg`
 * `bts`, `btr`, `btc`
 * `xchg`, `xadd`, `cmpxchg`, `cmpxchg8b`
