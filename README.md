@@ -241,6 +241,13 @@ These processors allow performance enhancing operatons such as allowing reads to
 
 State, in memory, the most valuable thing of this world.
 
+Memory banks in Linux are treated as __nodes__, even if the system has only one node.
+Every node is divided into __zones__, represented as ZONE_DMA, ZONE_NORMAL, and ZONE_HIGHMEM, while all memory are divided into __page frames__ whose size are typically 4KB.
+ZONE_DMA is located at the lower part, used by DMA devices.
+ZONE_NORMAL is directly mapped by kernel into linear address space.
+ZONE_HIGHMEM exists only in 32bit architecture. Because the kernel just has 1GB linear address space, thus could not map physical memory above 1GB directly where this very part is called ZONE_HIGHMEM.
+To manage the memory of ZONE_HIGHMEM, the kernel leaves a region (typically 128MB) to complete this task.
+
 * Kernel and user process sharing the same address space, avoids the TLB flush everytime when doing syscall. 
 * With CONFIG_SLAB_DEBUG enabled, slab allocator marks either end of a object. If the marker(red zoning) is disturbed, a bug is reported. One object in free stat being filled with the pattern 0x5A(poisoning), if a newly allocated object does not match this pattern, a bug is reported.  
 
