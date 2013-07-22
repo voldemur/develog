@@ -32,6 +32,7 @@ $ strace -f -c -p `pidof PROGRAM`
 * `((aligned(sizeof(long))))`, align this variable or variables of this type on specific boundary.
 * `((packed))`, do not add padding to fields of this struct.
 * `((unused))`, this symbol would not be used, suppress the compiler's complains.
+* `((regparm(n)))`, use n(0-3) registers(eax, ecx, edx) to pass parameters, useful in IA-32.
 
 ```bash
 # Print the name of each header file used, in addition to other
