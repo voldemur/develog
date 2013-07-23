@@ -193,7 +193,8 @@ Common used constraints are the following:
 * `f`, floating point register
 
 Contraints modifiers are the following:
-* `=`, operand is write-only, thus previous value in it would be decarded 
+* `=`, operand is write-only, thus previous value in it would be decarded: `asm("movl $1, %0" : "=r"(out)::)`
+* `+`.  operand is used as both read and write: `asm("incl %0": "+r"(out))`
 
 
 Use `__asm__` instead of `asm` if the latter conflicts with something in the program.
