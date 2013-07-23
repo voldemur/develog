@@ -34,6 +34,8 @@ $ strace -f -c -p `pidof PROGRAM`
 * `((unused))`, this symbol would not be used, suppress the compiler's complains.
 * `((regparm(n)))`, use n(0-3) registers(eax, ecx, edx) to pass parameters, useful in IA-32.
 
+### GCC extensions
+
 ```bash
 # Print the name of each header file used, in addition to other
 # normal activities. Each name is indented to show how deep in
@@ -244,6 +246,10 @@ These processors allow performance enhancing operatons such as allowing reads to
 * The passive close end of the connection enters into CLOSE-WAIT state. A perssist connection of this state often indicates a bug.
 * Normally, connection is established already after the synchronous `connect` returned, even before the server `accept` it.
   Thus, at the server side, before a `accept`, a connect may have been established, even though the corresponding `fd` has not been allocated util `accept`.
+
+TCP socket options:
+* __SO_REUSEPORT__, allows multiple proccesses or threads listening the same address, and the kernel would distribute incomming connections fairly.
+* __SO_NODELAY__ or __SO_CORK__, nagle algorithm.
 
 # MM
 
