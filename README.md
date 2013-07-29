@@ -71,6 +71,8 @@ From                To                  Syms Read   Shared Object Library
 # try adding the corresponding namespace
 (gdb) set $p = ('tair::StorageManager'*)0x7fffffffdff0
 (gdb) p *$p
+# treate content at some address as pointer(address)
+(gdb) x/ag 0x7fffffffdff0
 ```
 
 Ctrl+X Ctrl+A opens the window to present the corressponding source code, which sometimes is a bit more convenient.
