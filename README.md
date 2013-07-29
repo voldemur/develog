@@ -67,6 +67,10 @@ From                To                  Syms Read   Shared Object Library
 (gdb) add-symbol-file /path/to/lib.so.debug 0x00000038fd800a70
 # add debuginfo for the whole executable
 (gdb) symbol-file /path/to/tair_server.debug
+# when converting from a literal address to a pointer of some type,
+# try adding the corresponding namespace
+(gdb) set $p = ('tair::StorageManager'*)0x7fffffffdff0
+(gdb) p *$p
 ```
 
 Ctrl+X Ctrl+A opens the window to present the corressponding source code, which sometimes is a bit more convenient.
