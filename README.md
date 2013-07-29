@@ -71,6 +71,8 @@ From                To                  Syms Read   Shared Object Library
 # try adding the corresponding namespace
 (gdb) set $p = ('tair::StorageManager'*)0x7fffffffdff0
 (gdb) p *$p
+# one more convenient way is using the {type}address format
+(gdb) p {tair::StorageManager}0x7fffffffdff0
 # treate content at some address as pointer(address)
 (gdb) x/ag 0x7fffffffdff0
 ```
