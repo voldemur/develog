@@ -77,6 +77,8 @@ From                To                  Syms Read   Shared Object Library
 (gdb) p {tair::StorageManager}0x7fffffffdff0
 # treate content at some address as pointer(address)
 (gdb) x/ag 0x7fffffffdff0
+# display next instruction every time you stop
+(gdb) display/i $rip
 ```
 
 Ctrl+X Ctrl+A opens the window to present the corressponding source code, which sometimes is a bit more convenient.
