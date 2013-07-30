@@ -46,6 +46,7 @@ $ cc -H main.c
 ## GDB
 ```bash
 $ gcore `pidof PROGRAM` # generate a core dump file
+$ gdb --args ./a.out -f etc/a.out.conf
 ```
 
 ```bash
@@ -56,6 +57,7 @@ $ gcore `pidof PROGRAM` # generate a core dump file
 (gdb) i reg
 # view specific register
 (gdb) i reg rip
+(gdb) p $rip
 # view whole set of registers
 (gdb) i all-reginsters
 # combine `bt` and `i locals`
