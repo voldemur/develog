@@ -285,6 +285,7 @@ For NUMA system, the global `mem_map` is just a virtual array. The actual struct
 
 # Conventions
 * Header files tend to be included by source files. Thus, try not to include other unecessary header files in your ones, especially for the interface headers. Or, Not only would this increase the build time, but also would annoy your users. 
+* As long as a parameter of a function would not be modified, __declare__ it as `const`.
 
 # To Be Added
 * SystemTap
