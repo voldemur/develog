@@ -117,7 +117,7 @@ $ printf "%x\n" 12345
 $ sudo swapoff -a
 $ sudo swapon -a
 # print associated source line using PC
-$ addr2line -e executable 0xdeadbeef 0xbeefdead
+$ addr2line -if -e executable 0xdeadbeef 0xbeefdead
 ```
 
 
