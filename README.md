@@ -116,6 +116,8 @@ $ printf "%x\n" 12345
 # turn on/off the swap facility
 $ sudo swapoff -a
 $ sudo swapon -a
+# print associated source line using PC
+$ addr2line -e executable 0xdeadbeef 0xbeefdead
 ```
 
 
