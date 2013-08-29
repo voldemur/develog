@@ -105,6 +105,9 @@ $ patch -p0 < patch
 
 ## miscs
 ```bash
+# auto command completion
+$ yum install bash-completion
+$ apt-get install bash-completion
 # issue a command as a daemon
 $ (command &)
 # simple calculator only for integers
