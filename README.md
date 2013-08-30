@@ -33,6 +33,7 @@ $ strace -f -c -p `pidof PROGRAM`
 * `((packed))`, do not add padding to fields of this struct.
 * `((unused))`, this symbol would not be used, suppress the compiler's complains.
 * `((regparm(n)))`, use n(0-3) registers(eax, ecx, edx) to pass parameters, useful in IA-32.
+* `((alias("TARGET_FUNCTION")))`, use the function TARGET\_FUNCTION to alias this function.
 
 ### GCC extensions
 
