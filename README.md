@@ -48,6 +48,7 @@ $ cc -H main.c
 ```bash
 $ gcore `pidof PROGRAM` # generate a core dump file
 $ gdb --args ./a.out -f etc/a.out.conf
+$ gdb -p `pidof PROGRAM` -ex 'set global_variable = 0' -batch
 ```
 
 ```bash
