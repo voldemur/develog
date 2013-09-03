@@ -81,6 +81,17 @@ From                To                  Syms Read   Shared Object Library
 (gdb) x/ag 0x7fffffffdff0
 # display next instruction every time you stop
 (gdb) display/i $rip
+# when facing a corrupted stack, this may help
+(gdb) x/40a $rsp
+# addr2line doesn't work when debuginfo are spearated
+(gdb) l *SOME_ADDRESS_OF_SOME_INSTRUCTION
+line 372 in tair_server.cpp...
+# also
+(gdb) i line *SOME_ADDRESS_OF_SOME_INSTRUCTION
+# view memory mappings of a alive process you attached
+(gdb) i proc mappings
+# 'i proc' doesn't work with a core dump, try this
+(gdb) maintenance info sections
 ```
 
 Ctrl+X Ctrl+A opens the window to present the corressponding source code, which sometimes is a bit more convenient.
