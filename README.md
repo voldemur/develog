@@ -134,6 +134,8 @@ $ sudo swapoff -a
 $ sudo swapon -a
 # print associated source line using PC
 $ addr2line -if -e executable 0xdeadbeef 0xbeefdead
+# use file content through ssh tunnel
+$ cat .ssh/id_rsa.pub | ssh 10.232.4.14 'cat - >> .ssh/authoried_keys'
 ```
 
 
