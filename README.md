@@ -28,7 +28,9 @@ $ strace -f -c -p `pidof PROGRAM`
 ## GCC
 
 `__attribute__` on variable or function declaration:
+* `((alias("target")))`, define a weak alias with the function `target`
 * `((noreturn))`, this function would never return.
+* `((always_inline))`, do inline this function.
 * `((noinline))`, do not inline this function.
 * `((aligned(sizeof(long))))`, align this variable or variables of this type on specific boundary.
 * `((packed))`, do not add padding to fields of this struct.
