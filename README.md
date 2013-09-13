@@ -29,6 +29,7 @@ $ strace -f -c -p `pidof PROGRAM`
 
 `__attribute__` on variable or function declaration:
 * `((noreturn))`, this function would never return.
+* `((noinline))`, do not inline this function.
 * `((aligned(sizeof(long))))`, align this variable or variables of this type on specific boundary.
 * `((packed))`, do not add padding to fields of this struct.
 * `((unused))`, this symbol would not be used, suppress the compiler's complains.
