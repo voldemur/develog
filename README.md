@@ -171,6 +171,7 @@ $ cat .ssh/id_rsa.pub | ssh 10.232.4.14 'cat - >> .ssh/authoried_keys'
 * The accuracy of `usleep` depends on the version of kernel and the load of the system, roughly millisecond other than microsecond.
 * `likely` or `unlikely` macros are used to direct compilers arrange the instructions properly, to maximize the branch prediction of CPU, to stall the instruction pipelines less.
 * To make GCC optimize your code partially, you could use `__attribute__((optimize(0)))` on the __declaration__ of specific function.
+* There are four performance-killers: Data Copying, Context Switching, Memory Allocation, and Lock Contention.
 
 # Assembly
 
