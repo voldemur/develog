@@ -142,6 +142,8 @@ $ sudo swapon -a
 $ addr2line -if -e executable 0xdeadbeef 0xbeefdead
 # use file content through ssh tunnel
 $ cat .ssh/id_rsa.pub | ssh 10.232.4.14 'cat - >> .ssh/authoried_keys'
+# generate screenshot from mkv
+$ ffmpeg -ss 00:44:50 -t 1 -i video.mkv -vcodec png -f image2 output.png
 ```
 
 
