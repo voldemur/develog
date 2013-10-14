@@ -158,16 +158,16 @@ awk 'BEGIN {\
 }'
 # prefix with the number of ocurrences
 $ uniq -c
-# only print out repeated lines
+# only print out uniq lines
 $ uniq -u
 # only print out duplicate lines
 $ uniq -d
 # set intersection
-$ sort file1 file2 | uniq -u
+$ sort file1 file2 | uniq -d
 # set union
 $ sort file1 file2 | uniq
 # set difference: {file1} - {file2}
-$ sort file1 file2 file2 | uniq -d
+$ sort file1 file2 file2 | uniq -u
 ```
 
 
