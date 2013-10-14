@@ -156,6 +156,10 @@ awk 'BEGIN {\
   printf("[%s] ", timestr);\
   $1="";print $0;\
 }'
+# prefix with the number of ocurrences
+$ uniq -c
+# only print out repeated lines
+$ uniq -u
 ```
 
 
