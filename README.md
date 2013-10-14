@@ -168,6 +168,8 @@ $ sort file1 file2 | uniq -d
 $ sort file1 file2 | uniq
 # set difference: {file1} - {file2}
 $ sort file1 file2 file2 | uniq -u
+# sysmmetric set difference: {{file1} + {file2}} - {{file1} - {file2}}
+$ sort file1 file2 | uniq -u
 ```
 
 
