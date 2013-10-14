@@ -160,6 +160,8 @@ awk 'BEGIN {\
 $ uniq -c
 # only print out repeated lines
 $ uniq -u
+# only print out duplicate lines
+$ uniq -d
 # set intersection
 $ sort file1 file2 | uniq -u
 # set union
