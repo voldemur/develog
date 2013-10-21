@@ -95,6 +95,10 @@ line 372 in tair_server.cpp...
 (gdb) i proc mappings
 # 'i proc' doesn't work with a core dump, try this
 (gdb) maintenance info sections
+# dump memory between [start, end) into raw binary file
+(gdb) dump binary memory filename start end
+# append memory between [start, end) into raw binary file
+(gdb) append binary memory filename start end
 ```
 
 Ctrl+X Ctrl+A opens the window to present the corressponding source code, which sometimes is a bit more convenient.
