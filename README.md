@@ -1,5 +1,5 @@
 # Tools
-Sharpen Your Gears, Release Your Mind.
+Sharpen Your Gears, Wing Your Mind.
 
 ## oprofile
 ```bash
