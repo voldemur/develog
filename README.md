@@ -177,6 +177,9 @@ $ sort file1 file2 | uniq -u
 # count number of connections each client
 $ ss -n | awk '{print $5}' | awk -F':' '{print $1;}' |\
     sort | uniq -c | sort -g
+# Ctrl + \ to terminate a foreground process and produce a core dump
+# this generates a SIGQUIT signal
+
 ```
 
 
