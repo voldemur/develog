@@ -179,6 +179,9 @@ $ ss -n | awk '{print $5}' | awk -F':' '{print $1;}' |\
     sort | uniq -c | sort -g
 # Ctrl + \ to terminate a foreground process and produce a core dump
 # this generates a SIGQUIT signal
+# OR in grep
+$ grep 'pattern1\|pattern2' file
+$ grep -e 'patter1' -e 'pattern2' file
 
 ```
 
