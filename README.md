@@ -216,6 +216,7 @@ $ grep -e 'patter1' -e 'pattern2' file
 * `likely` or `unlikely` macros are used to direct compilers arrange the instructions properly, to maximize the branch prediction of CPU, to stall the instruction pipelines less.
 * To make GCC optimize your code partially, you could use `__attribute__((optimize(0)))` on the __declaration__ of specific function.
 * There are four performance-killers: Data Copying, Context Switching, Memory Allocation, and Lock Contention.
+* Reference to pointer acts like a two-level pointer, use it less in the critical path.
 
 # Assembly
 
