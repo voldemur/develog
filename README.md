@@ -121,6 +121,8 @@ $ svn diff | vim -
 # generate and apply patches
 $ svn diff > patch
 $ patch -p0 < patch
+# patching with white-spaces ignored
+$ patch -l -p0 < patch
 # ignore whitespace changes in diff
 $ svn diff -x -w
 $ svn diff -x -b
