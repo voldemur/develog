@@ -110,6 +110,7 @@ $ top -H -d 1
 $ # in top
 $ # press `1` to ses individual cpu core status
 $ # press `f` then `j` to see which core a specific thread is running on
+$ # press `F` or `O` to select the sort field, `n` for RES, `p` for SWAP, `u` for PageFault, `v` for DirtyPage
 ```
 
 ## svn
