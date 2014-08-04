@@ -364,3 +364,6 @@ For NUMA system, the global `mem_map` is just a virtual array. The actual struct
 * Cache Coherence & Cache Consistency
 * Memory Barriers
 * Memory Models
+* TCP
+ * Delay ACK
+ * Nagle
